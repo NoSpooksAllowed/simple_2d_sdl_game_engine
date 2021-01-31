@@ -70,6 +70,8 @@ void Game::ProcessInput() {
 }
 
 void Game::Update() {
+    // Wait until 16ms has elapsed since the last frame
+    while (!SDL_TICKS_PASSED(SDL_GetTicks(), ticksLastFrame + FRAME_TARGET_TIME)) {}
     // Delta time is the difference in the ticks from last frame converted to secs
     float deltaTime = (SDL_GetTicks() - ticksLastFrame) / 1000.0f;
 
