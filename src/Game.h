@@ -12,6 +12,7 @@ private:
 public:
     Game();
     ~Game();
+    int ticksLastFrame = 0;
     bool IsRunning() const;
     void Initialize(unsigned width, unsigned height);
     void ProcessInput();
